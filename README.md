@@ -1,2 +1,2 @@
 # NASA-Code
-Includes all old that ran during 2016 competition
+Includes all code for College of DuPage Nasa robot for the NASA RMC
