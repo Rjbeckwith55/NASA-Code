@@ -9,7 +9,7 @@ s.listen(1)
 s.setsockopt(socket.IPPROTO_TCP , socket.TCP_NODELAY , 1 )
 conn, addr = s.accept()
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) # BCM = GPIO pins
 GPIO.setwarnings(False)
 GPIO.setup(05, GPIO.OUT)
 GPIO.setup(06, GPIO.OUT)
@@ -84,5 +84,6 @@ while True:
 		else:
 			Convey.ChangeDutyCycle(50)
 			print "Conveyor Off"
+			
 s.close()
 exit(0)
