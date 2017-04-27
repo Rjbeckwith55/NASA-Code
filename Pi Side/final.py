@@ -40,19 +40,21 @@ tiltCount = 1
 conveyorCount = 1
 while True:
 	info = conn.recv(6).decode()
-	print info
     #Drive Command
 	if info[:2] == 'DR':
+		print info
 		pwm = float(info[2:])
 		Drive.ChangeDutyCycle(pwm)
 
     #Steer Command
 	if info[:2] == 'ST':
+		print info
 		pwm = float(info[2:])
 		Steer.ChangeDutyCycle(pwm)
 
     #Auger Command
 	if info[:2] == 'AU':
+		print info
 		pwm = float(info[2:])
 		augerCount = augerCount + 1
 		if augerCount % 2 == 0:
@@ -63,11 +65,13 @@ while True:
 
     #Ballscrew Slide Command      				
 	if info[:2] == 'SL':
+		print info
 		pwm = float(info[2:])
 		Slide.ChangeDutyCycle(pwm)
 	
     #Tilt Command	
 	if info[:2] == 'TI':
+		print info
 		tiltCount = tiltCount + 1
 		pwm = float(info[2:])
 		if tiltCount % 2 == 0:
@@ -78,6 +82,7 @@ while True:
 			
 	#Conveyor Command		
 	if info[:2] == 'CO':
+		print info
 		conveyorCount = conveyorCount + 1
 		if conveyorCount % 2 == 1:
 			Convey.ChangeDutyCycle(90)
