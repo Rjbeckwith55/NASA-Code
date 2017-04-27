@@ -89,6 +89,18 @@ while True:
 		else:
 			Convey.ChangeDutyCycle(50)
 			print "Conveyor Off"
+	if info[:2] == 'QU'
+		print info
+		Drive.ChangeDutyCycle(50)
+		Convey.ChangeDutyCycle(50)
+		Steer.ChangeDutyCycle(50)
+		Tilt.ChangeDutyCycle(50)
+		Auger.ChangeDutyCycle(50)
+		Slide.ChangeDutyCycle(50)
+		print "Clean Shutdown"
+		break
+		
+		
 			
 s.close()
 exit(0)
