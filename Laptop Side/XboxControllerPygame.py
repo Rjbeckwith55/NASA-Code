@@ -13,7 +13,7 @@ import pygame
 	"""
 
 def stop():
-        msg = "DR" + 50.0
+        msg = "QU" + 50.0
         s.send(msg)
         pygame.joystick.quit()
         pygame.quit()
