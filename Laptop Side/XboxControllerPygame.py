@@ -13,8 +13,6 @@ import pygame
 	"""
 
 def stop():
-        msg = "QU" + 50.0
-        s.send(msg)
         pygame.joystick.quit()
         pygame.quit()
         print("Clean exit")
@@ -162,6 +160,8 @@ def main():
                     running = False
 
     print("Stopping")
+    msg = "QU" + 50.0
+    s.send(msg)
     s.close()
     stop()
 main()
