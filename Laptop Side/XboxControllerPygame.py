@@ -78,7 +78,7 @@ def main():
 
                #Auger control using the A button
                 if joystick.get_button(0) != 0:
-                    pwm = 10.0
+                    pwm = 40.0
                     msg = "AU" + str(pwm)
                     print(msg)
                     send = msg.encode()
@@ -86,7 +86,7 @@ def main():
                 
                 #Auger control using B button
                 if joystick.get_button(1) != 0:
-                    pwm = 90.0
+                    pwm = 60.0
                     msg = "AU" + str(pwm)
                     print(msg)
                     send = msg.encode()
@@ -160,7 +160,7 @@ def main():
                     running = False
 
     print("Stopping")
-    msg = "QU" + 50.0
+    msg = "QU" +str(50.0)
     s.send(msg)
     s.close()
     stop()
