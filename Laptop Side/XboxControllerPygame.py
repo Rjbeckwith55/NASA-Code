@@ -51,7 +51,7 @@ def main():
                 
                 #Steering command on the top left axis left and right direction
                 if joystick.get_axis(0) > .1 or joystick.get_axis(0) < -.1:
-                    pwmst = (joystick.get_axis(0) + 1) / .02
+                    pwmst = (-(joystick.get_axis(0)) + 1) / .02
                     pwmst = round(pwmst,0)
                     if pwmst > 90:
                         pwmst = 90.0
