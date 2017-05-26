@@ -75,19 +75,19 @@ def main():
                #Auger control using the A button
                 if joystick.get_button(0) != 0:
                     Str = "AU"
-                    Send(40.0,s,Str)
+                    Send(75,s,Str)
                 
                 #Auger control using B button
                 if joystick.get_button(1) != 0:
                     Str = "AU"
-                    Send(60.0,s,Str)
+                    Send(25,s,Str)
                 
                 #Ballscrew slide using the left stick Left
                 if joystick.get_axis(2) > .1:
                     Str = "SL"
                     Send(70.0,s,Str)
                     SlL = True
-                elif joystick.get_axis(2) < .1 and Sl:
+                elif joystick.get_axis(2) < .1 and SlL:
                     SlL = False
                     Str = "SL"
                     Send(50.0,s,Str)
@@ -97,7 +97,7 @@ def main():
                     Str = "SL"
                     Send(30.0,s,Str)
                     SlR = True
-                elif joystick.get_axis(2) > -.1 and Sl:
+                elif joystick.get_axis(2) > -.1 and SlR:
                     Str = "SL"
                     SlR = False
                     Send(50.0,s,Str)
@@ -109,6 +109,7 @@ def main():
 
                 #Tilt using right bumper
                 if joystick.get_button(5) != 0:
+                    Str = "TI"
                     Send(90.0,s,Str)
                 
                 #Drive command using top left stick up and down
@@ -132,7 +133,7 @@ def main():
                 #Pause the program when select is pressed
                 if joystick.get_button(6):
                     Str="PA"
-                    print ("Paused press select again to unpause")
+                    print ("Paused. press select again to unpause")
                     Send(50.0,s,Str)
 
     print("Stopping")
