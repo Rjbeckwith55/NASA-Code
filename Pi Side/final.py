@@ -109,6 +109,9 @@ def pause(s,GPIO):
 	info = " "
 	while info[:2]!="PA":
 		info = conn.recv(6).decode()
+		if info[:2] == 'QU'
+			print "Quit was pressed while paused"
+			quit(s,GPIO)
 def quit(s,GPIO):
 	Drive.ChangeDutyCycle(50)
 	Convey.ChangeDutyCycle(50)
