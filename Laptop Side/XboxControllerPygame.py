@@ -47,7 +47,8 @@ def main():
     #Bools for motion
     SlR = True
     SlL = True
-    
+    #counter for pause message
+    PACounter = 1
     while(running):
         for event in pygame.event.get():
             if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYAXISMOTION:
@@ -130,15 +131,20 @@ def main():
                 #Exit program if start button is pressed
                 if joystick.get_button(7):
                     running = False
+		    Str="QU"
+		    pwmdr = 50.0
+		    Send(pwmdr,s,Str)
+		    print ("Stopping")
                 #Pause the program when select is pressed
                 if joystick.get_button(6):
-                    Str="PA"
-                    print ("Paused. press select again to unpause")
+                    Str = "PA"
+		    if PACounter % 2 == 1
+                   	print ("Paused. press select again to unpause")
+		    else:
+			print ("Unpausing . . . ")
+		    counter+=1
                     Send(50.0,s,Str)
 
-    print("Stopping")
-    msg = "QU" + str(50.0)
-    s.send(msg)
     s.close()
     stop()
 def Send(pwm,s,Str):
