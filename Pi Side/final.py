@@ -92,7 +92,7 @@ try:
 			else:
 				Convey.ChangeDutyCycle(50)
 				print "Conveyor Off"
-		if info[:2] == "PA":
+		if info[:2] == 'PA':
 			pause(s,GPIO)
 		if info[:2] == 'QU':
 			print info
@@ -106,12 +106,13 @@ def pause(s,GPIO):
 	Tilt.ChangeDutyCycle(50)
 	Auger.ChangeDutyCycle(50)
 	Slide.ChangeDutyCycle(50)
-	info = " "
-	while info[:2]!="PA":
+	info = "  "
+	while info[:2]!='PA':
 		info = conn.recv(6).decode()
 		if info[:2] == 'QU'
 			print "Quit was pressed while paused"
 			quit(s,GPIO)
+	print "Successfully Resumed . . ."
 def quit(s,GPIO):
 	Drive.ChangeDutyCycle(50)
 	Convey.ChangeDutyCycle(50)
