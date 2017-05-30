@@ -112,7 +112,7 @@ def pause(s,GPIO):
 		if info[:2] == 'QU'
 			print "Quit was pressed while paused"
 			quit(s,GPIO)
-	print "Successfully Resumed . . ."
+	print "Successfully Unpaused . . ."
 def quit(s,GPIO):
 	Drive.ChangeDutyCycle(50)
 	Convey.ChangeDutyCycle(50)
